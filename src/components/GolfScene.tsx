@@ -32,19 +32,9 @@ const GolfScene = () => {
           <Zap size={28} className="fill-cyan-400" />
         </motion.div>
         
-        <motion.h2 
-          animate={{ 
-            textShadow: [
-              "0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #a855f7",
-              "0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #3b82f6",
-              "0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #a855f7"
-            ]
-          }}
-          transition={{ repeat: Infinity, duration: 4 }}
-          className="text-6xl font-black text-white tracking-tighter uppercase italic relative z-20"
-        >
+        <h2 className="text-6xl font-black text-[#a855f7] tracking-tighter uppercase italic relative z-20">
           Monster Golf
-        </motion.h2>
+        </h2>
         
         <motion.div 
           animate={{ width: ['0%', '100%', '0%'] }}
