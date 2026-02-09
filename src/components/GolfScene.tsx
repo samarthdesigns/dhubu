@@ -2,67 +2,73 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Flag, Trophy, Ghost } from 'lucide-react';
+import { Ghost, Sparkles, Trophy } from 'lucide-react';
 
 const GolfScene = () => {
   return (
     <motion.div 
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      className="w-full h-full flex flex-col items-center justify-center space-y-6 p-4 bg-emerald-50 rounded-2xl border-4 border-emerald-200 relative overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="w-full h-[450px] bg-[#0a0a0a] rounded-3xl border-4 border-purple-500/30 relative overflow-hidden flex flex-col items-center justify-center p-6"
     >
-      {/* Background elements */}
-      <div className="absolute top-4 right-4 text-emerald-200 rotate-12">
-        <Flag size={48} />
-      </div>
-      <div className="absolute bottom-4 left-4 text-purple-200 -rotate-12">
-        <Ghost size={48} />
+      {/* Neon Glows */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.15),transparent_70%)]" />
+      
+      {/* Monster Golf Header */}
+      <div className="z-10 mb-8 text-center">
+        <motion.h2 
+          animate={{ textShadow: ["0 0 10px #a855f7", "0 0 20px #a855f7", "0 0 10px #a855f7"] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="text-4xl font-black text-purple-400 tracking-tighter uppercase italic"
+        >
+          Monster Golf
+        </motion.h2>
+        <div className="h-1 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-1" />
       </div>
 
-      <div className="relative flex items-end gap-4">
-        <motion.div
-          animate={{ x: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-        >
-          <img src="/left-bunny.webp" alt="Samarth" className="w-24 h-24 object-contain" />
+      <div className="relative z-10 flex items-center gap-8 mb-8">
+        <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
+          <img src="/left-bunny.webp" alt="Samarth" className="w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
         </motion.div>
 
-        <div className="flex flex-col items-center mb-4">
+        <div className="flex flex-col items-center">
           <motion.div
-            animate={{ y: [0, -10, 0] }}
+            animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="bg-purple-500 text-white p-2 rounded-xl shadow-lg relative"
+            className="text-yellow-400"
           >
-            <Trophy size={24} />
-            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-purple-500 rotate-45" />
+            <Trophy size={48} />
           </motion.div>
-          <div className="w-4 h-4 rounded-full bg-white border-2 border-gray-200 mt-2 shadow-inner" />
+          <Ghost className="text-purple-500 mt-2 animate-pulse" size={32} />
         </div>
 
-        <motion.div
-          animate={{ x: [0, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 3, delay: 0.5 }}
-        >
-          <img src="/right-bunny.webp" alt="Dhruvi" className="w-24 h-24 object-contain" />
+        <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 3, delay: 0.5 }}>
+          <img src="/right-bunny.webp" alt="Dhruvi" className="w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]" />
         </motion.div>
       </div>
 
-      <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border-2 border-emerald-100 shadow-sm text-center max-w-xs">
-        <p className="text-emerald-800 font-medium leading-relaxed">
+      <div className="z-10 bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl text-center max-w-sm">
+        <p className="text-purple-100 text-sm leading-relaxed font-medium">
           "The plushie cornicles started on 16th August 2025, when I won you your first monster golf themed plushie."
         </p>
       </div>
 
-      <div className="flex gap-2">
-        {[1, 2, 3].map((i) => (
-          <motion.div
-            key={i}
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ repeat: Infinity, duration: 1, delay: i * 0.2 }}
-            className="w-3 h-3 rounded-full bg-emerald-400"
-          />
-        ))}
-      </div>
+      {/* Floating Particles */}
+      {[...Array(6)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute text-purple-500/20"
+          animate={{ 
+            y: [0, -100], 
+            x: [0, Math.random() * 40 - 20],
+            opacity: [0, 1, 0] 
+          }}
+          transition={{ repeat: Infinity, duration: 3 + Math.random() * 2, delay: i * 0.5 }}
+          style={{ left: `${15 + i * 15}%`, bottom: '-20px' }}
+        >
+          <Sparkles size={16} />
+        </motion.div>
+      ))}
     </motion.div>
   );
 };
