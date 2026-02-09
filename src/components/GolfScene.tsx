@@ -9,72 +9,67 @@ const GolfScene = () => {
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full h-[550px] bg-[#0a0a0a] rounded-[40px] border-8 border-purple-500/30 relative overflow-hidden flex flex-col items-center justify-center p-10"
+      className="w-full h-[550px] bg-[#0a0a0a] rounded-[40px] border-4 border-purple-500/20 relative overflow-hidden flex flex-col items-center justify-center p-8"
     >
-      {/* Neon Glows */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.2),transparent_70%)]" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.15),transparent_70%)]" />
       
-      {/* Monster Golf Header */}
-      <div className="z-10 mb-12 text-center">
+      <div className="z-10 mb-10 text-center">
         <motion.h2 
-          animate={{ textShadow: ["0 0-15px #a855f7", "0 0 30px #a855f7", "0 0 15px #a855f7"] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="text-6xl font-black text-purple-400 tracking-tighter uppercase italic font-serif"
+          animate={{ opacity: [0.7, 1, 0.7] }}
+          transition={{ repeat: Infinity, duration: 3 }}
+          className="text-4xl font-bold text-purple-300 tracking-widest uppercase italic"
         >
           Monster Golf
         </motion.h2>
-        <div className="h-2 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-2" />
+        <div className="h-[1px] w-32 bg-purple-500/50 mx-auto mt-2" />
       </div>
 
-      <div className="relative z-10 flex items-center gap-12 mb-12">
-        <motion.div animate={{ y: [0, -15, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
+      <div className="relative z-10 flex items-center gap-10 mb-10">
+        <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4 }}>
           <img 
             src="/Samarth.png" 
             alt="Samarth" 
-            className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" 
+            className="w-28 h-28 object-contain drop-shadow-lg"
+            onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Samarth"}
           />
         </motion.div>
 
         <div className="flex flex-col items-center">
           <motion.div
-            animate={{ scale: [1, 1.3, 1], rotate: [0, 15, -15, 0] }}
+            animate={{ scale: [1, 1.1, 1] }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="text-yellow-400"
+            className="text-yellow-400/80"
           >
-            <Trophy size={64} />
+            <Trophy size={48} />
           </motion.div>
-          <Ghost className="text-purple-500 mt-4 animate-pulse" size={40} />
+          <Ghost className="text-purple-500/60 mt-3 animate-pulse" size={32} />
         </div>
 
-        <motion.div animate={{ y: [0, -15, 0] }} transition={{ repeat: Infinity, duration: 3, delay: 0.5 }}>
+        <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}>
           <img 
             src="/Dhruvi.png" 
             alt="Dhruvi" 
-            className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" 
+            className="w-28 h-28 object-contain drop-shadow-lg"
+            onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Dhruvi"}
           />
         </motion.div>
       </div>
 
-      <div className="z-10 bg-white/10 backdrop-blur-xl border-2 border-white/20 p-8 rounded-[30px] text-center max-w-lg">
-        <p className="text-purple-100 text-2xl leading-relaxed font-black font-serif italic">
+      <div className="z-10 bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-[24px] text-center max-w-md">
+        <p className="text-purple-100 text-base leading-relaxed font-medium italic tracking-tight">
           "The plushie cornicles started on 16th August 2025, when I won you your first monster golf themed plushie."
         </p>
       </div>
 
-      {/* Floating Particles */}
-      {[...Array(8)].map((_, i) => (
+      {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute text-purple-500/30"
-          animate={{ 
-            y: [0, -150], 
-            x: [0, Math.random() * 60 - 30],
-            opacity: [0, 1, 0] 
-          }}
-          transition={{ repeat: Infinity, duration: 3 + Math.random() * 2, delay: i * 0.4 }}
-          style={{ left: `${10 + i * 12}%`, bottom: '-30px' }}
+          className="absolute text-purple-500/20"
+          animate={{ y: [0, -100], opacity: [0, 1, 0] }}
+          transition={{ repeat: Infinity, duration: 4, delay: i * 0.8 }}
+          style={{ left: `${20 + i * 15}%`, bottom: '10%' }}
         >
-          <Sparkles size={20} />
+          <Sparkles size={16} />
         </motion.div>
       ))}
     </motion.div>

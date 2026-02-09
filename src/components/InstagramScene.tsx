@@ -14,48 +14,49 @@ const InstagramScene = () => {
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="w-full max-w-lg mx-auto bg-white border border-gray-200 rounded-[40px] overflow-hidden shadow-2xl flex flex-col h-[550px]"
+      className="w-full max-w-lg mx-auto bg-white border border-gray-100 rounded-[40px] overflow-hidden shadow-xl flex flex-col h-[550px]"
     >
       {/* Chat Header */}
-      <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-white">
-        <div className="flex items-center gap-4">
-          <ChevronLeft size={28} />
+      <div className="flex items-center justify-between p-5 border-b border-gray-50 bg-white">
+        <div className="flex items-center gap-3">
+          <ChevronLeft size={24} className="text-gray-600" />
           <div className="relative">
-            <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[3px]">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[2px]">
               <img 
                 src="/Dhruvi.png" 
                 alt="Dhruvi" 
-                className="w-full h-full rounded-full object-cover bg-white" 
+                className="w-full h-full rounded-full object-cover bg-white"
+                onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Dhruvi"}
               />
             </div>
-            <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
+            <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full" />
           </div>
           <div>
-            <p className="font-black text-lg font-serif italic">Dhruvi</p>
-            <p className="text-xs text-gray-500">Active now</p>
+            <p className="font-bold text-base tracking-tight text-gray-800">Dhruvi</p>
+            <p className="text-[10px] text-gray-400 font-medium">Active now</p>
           </div>
         </div>
-        <div className="flex gap-6 text-gray-700">
-          <Phone size={24} />
-          <Video size={24} />
-          <Info size={24} />
+        <div className="flex gap-5 text-gray-600">
+          <Phone size={20} />
+          <Video size={20} />
+          <Info size={20} />
         </div>
       </div>
 
       {/* Chat Body */}
-      <div className="flex-1 p-6 space-y-6 overflow-y-auto bg-gray-50/50">
+      <div className="flex-1 p-5 space-y-5 overflow-y-auto bg-gray-50/30">
         {messages.map((msg, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: msg.side === 'left' ? -20 : 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.3 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2 }}
             className={`flex ${msg.side === 'right' ? 'justify-end' : 'justify-start'}`}
           >
-            <div className={`max-w-[85%] p-5 rounded-[30px] text-lg font-bold font-serif italic ${
+            <div className={`max-w-[80%] p-4 rounded-[24px] text-sm font-medium tracking-tight ${
               msg.side === 'right' 
-                ? 'bg-blue-500 text-white rounded-tr-none' 
-                : 'bg-white border border-gray-100 text-gray-800 rounded-tl-none shadow-md'
+                ? 'bg-[#0095F6] text-white rounded-tr-none' 
+                : 'bg-white border border-gray-100 text-gray-800 rounded-tl-none shadow-sm'
             }`}>
               {msg.text}
             </div>
@@ -63,8 +64,8 @@ const InstagramScene = () => {
         ))}
       </div>
 
-      <div className="p-8 text-center border-t border-gray-100 bg-white">
-        <p className="text-2xl text-gray-800 font-black italic leading-tight font-serif">
+      <div className="p-6 text-center border-t border-gray-50 bg-white">
+        <p className="text-lg text-gray-700 font-medium italic tracking-tight leading-relaxed">
           "July 2025, we started talking and it just clicked."
         </p>
       </div>
