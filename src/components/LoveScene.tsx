@@ -38,7 +38,11 @@ const LoveScene = () => {
             transition={{ repeat: Infinity, duration: 4 }}
             className="relative"
           >
-            <img src="/left-bunny.png" alt="Samarth" className="w-36 h-36 object-contain drop-shadow-lg" />
+            <img 
+              src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Coffee%20Bean.png" 
+              alt="Samarth" 
+              className="w-36 h-36 object-contain drop-shadow-lg" 
+            />
             <div className="absolute -top-4 -right-4 bg-white px-3 py-1.5 rounded-xl shadow-md text-xs font-black text-rose-500 border-2 border-rose-100">
               Jan 31
             </div>
@@ -56,7 +60,11 @@ const LoveScene = () => {
             transition={{ repeat: Infinity, duration: 4 }}
             className="relative"
           >
-            <img src="/right-bunny.png" alt="Dhruvi" className="w-36 h-36 object-contain drop-shadow-lg" />
+            <img 
+              src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Avocado.png" 
+              alt="Dhruvi" 
+              className="w-36 h-36 object-contain drop-shadow-lg" 
+            />
             <div className="absolute -top-4 -left-4 bg-white px-3 py-1.5 rounded-xl shadow-md text-xs font-black text-rose-500 border-2 border-rose-100">
               Feb 2
             </div>
@@ -66,7 +74,7 @@ const LoveScene = () => {
         <div className="bg-white/70 backdrop-blur-md p-8 rounded-[40px] border-4 border-white shadow-xl">
           <h3 className="text-4xl font-serif italic text-rose-600 mb-6 font-black">Pure Love</h3>
           <p className="text-rose-900 text-2xl font-black leading-relaxed">
-            "From saying love you 31st Jan to me saying I love you 2nd Feb. We've grown closer"
+            "31st Jan we tell each other love you and 2nd Feb I tell you that I love you. Fast? Slow? Perfect?"
           </p>
         </div>
 

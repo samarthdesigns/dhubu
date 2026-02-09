@@ -22,7 +22,11 @@ const InstagramScene = () => {
           <ChevronLeft size={28} />
           <div className="relative">
             <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[3px]">
-              <img src="/right-bunny.png" alt="Dhruvi" className="w-full h-full rounded-full object-cover bg-white" />
+              <img 
+                src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Avocado.png" 
+                alt="Dhruvi" 
+                className="w-full h-full rounded-full object-contain bg-white p-1" 
+              />
             </div>
             <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
           </div>

@@ -19,8 +19,12 @@ const FacebookScene = () => {
 
       <div className="p-8 flex-1 flex flex-col">
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-14 h-14 rounded-full bg-gray-200 overflow-hidden border-2 border-gray-100">
-            <img src="/left-bunny.png" alt="Samarth" className="w-full h-full object-cover" />
+          <div className="w-14 h-14 rounded-full bg-gray-100 overflow-hidden border-2 border-gray-100 flex items-center justify-center">
+            <img 
+              src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Coffee%20Bean.png" 
+              alt="Samarth" 
+              className="w-10 h-10 object-contain" 
+            />
           </div>
           <div>
             <p className="font-black text-lg">Samarth</p>

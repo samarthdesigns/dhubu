@@ -17,7 +17,7 @@ const GolfScene = () => {
       {/* Monster Golf Header */}
       <div className="z-10 mb-12 text-center">
         <motion.h2 
-          animate={{ textShadow: ["0 0 15px #a855f7", "0 0 30px #a855f7", "0 0 15px #a855f7"] }}
+          animate={{ textShadow: ["0 0-15px #a855f7", "0 0 30px #a855f7", "0 0 15px #a855f7"] }}
           transition={{ repeat: Infinity, duration: 2 }}
           className="text-6xl font-black text-purple-400 tracking-tighter uppercase italic"
         >
@@ -28,7 +28,11 @@ const GolfScene = () => {
 
       <div className="relative z-10 flex items-center gap-12 mb-12">
         <motion.div animate={{ y: [0, -15, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
-          <img src="/left-bunny.png" alt="Samarth" className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" />
+          <img 
+            src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Coffee%20Bean.png" 
+            alt="Samarth" 
+            className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" 
+          />
         </motion.div>
 
         <div className="flex flex-col items-center">
@@ -43,7 +47,11 @@ const GolfScene = () => {
         </div>
 
         <motion.div animate={{ y: [0, -15, 0] }} transition={{ repeat: Infinity, duration: 3, delay: 0.5 }}>
-          <img src="/right-bunny.png" alt="Dhruvi" className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" />
+          <img 
+            src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Avocado.png" 
+            alt="Dhruvi" 
+            className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" 
+          />
         </motion.div>
       </div>
 
