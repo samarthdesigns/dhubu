@@ -23,7 +23,7 @@ const FacebookScene = () => {
               src="/Samarth.png" 
               alt="Samarth" 
               className="w-full h-full object-cover"
-              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Samarth"}
+              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&top=shortHair&hairColor=black"}
             />
           </div>
           <div>

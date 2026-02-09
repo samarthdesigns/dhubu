@@ -42,7 +42,7 @@ const ValentineCard = () => {
                 alt="Valentine" 
                 className="w-72 h-72 object-contain drop-shadow-xl"
                 onError={(e) => {
-                  e.currentTarget.src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Heart%20with%20Arrow.png";
+                  e.currentTarget.src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/People%20Hugging.png";
                 }}
               />
             </div>

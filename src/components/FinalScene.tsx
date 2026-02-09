@@ -21,7 +21,7 @@ const FinalScene = () => {
           src="/Landing Image.png" 
           alt="Us" 
           className="w-56 h-56 object-contain relative z-10 drop-shadow-xl"
-          onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Us"}
+          onError={(e) => e.currentTarget.src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/People%20Hugging.png"}
         />
         
         <motion.div

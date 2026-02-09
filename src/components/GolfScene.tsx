@@ -30,7 +30,7 @@ const GolfScene = () => {
             src="/Samarth.png" 
             alt="Samarth" 
             className="w-28 h-28 object-contain drop-shadow-lg"
-            onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Samarth"}
+            onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&top=shortHair&hairColor=black"}
           />
         </motion.div>
 
@@ -50,7 +50,7 @@ const GolfScene = () => {
             src="/Dhruvi.png" 
             alt="Dhruvi" 
             className="w-28 h-28 object-contain drop-shadow-lg"
-            onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Dhruvi"}
+            onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka&top=curly&hairColor=black"}
           />
         </motion.div>
       </div>

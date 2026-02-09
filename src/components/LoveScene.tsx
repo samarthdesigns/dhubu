@@ -30,7 +30,7 @@ const LoveScene = () => {
               src="/Samarth.png" 
               alt="Samarth" 
               className="w-28 h-28 object-contain drop-shadow-md"
-              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Samarth"}
+              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&top=shortHair&hairColor=black"}
             />
             <div className="absolute -top-2 -right-2 bg-white px-2 py-1 rounded-lg shadow-sm text-[10px] font-bold text-rose-400 border border-rose-50">
               Jan 31
@@ -46,7 +46,7 @@ const LoveScene = () => {
               src="/Dhruvi.png" 
               alt="Dhruvi" 
               className="w-28 h-28 object-contain drop-shadow-md"
-              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Dhruvi"}
+              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka&top=curly&hairColor=black"}
             />
             <div className="absolute -top-2 -left-2 bg-white px-2 py-1 rounded-lg shadow-sm text-[10px] font-bold text-rose-400 border border-rose-50">
               Feb 2
