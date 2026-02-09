@@ -42,8 +42,8 @@ const ValentineCard = () => {
   return (
     <div className="relative w-full max-w-2xl mx-auto perspective-1000">
       {/* Decorative Stack Layers */}
-      <div className="absolute inset-0 bg-white border-2 border-pink-50 rounded-[60px] shadow-sm transform rotate-2 translate-y-2 -z-10" />
-      <div className="absolute inset-0 bg-white border-2 border-pink-50 rounded-[60px] shadow-sm transform -rotate-1 translate-y-1 -z-10" />
+      <div className="absolute inset-0 bg-white border-2 border-pink-50 rounded-[40px] md:rounded-[60px] shadow-sm transform rotate-2 translate-y-2 -z-10" />
+      <div className="absolute inset-0 bg-white border-2 border-pink-50 rounded-[40px] md:rounded-[60px] shadow-sm transform -rotate-1 translate-y-1 -z-10" />
 
       <AnimatePresence mode="wait">
         {!isOpen ? (
@@ -59,31 +59,31 @@ const ValentineCard = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={handleOpen}
-            className="cursor-pointer bg-white border-4 border-pink-50 rounded-[60px] p-12 shadow-xl flex flex-col items-center justify-center space-y-10 hover:shadow-pink-100/50 transition-shadow min-h-[700px] relative z-10"
+            className="cursor-pointer bg-white border-4 border-pink-50 rounded-[40px] md:rounded-[60px] p-8 md:p-12 shadow-xl flex flex-col items-center justify-center space-y-8 md:space-y-10 hover:shadow-pink-100/50 transition-shadow min-h-[600px] md:min-h-[700px] relative z-10"
           >
             <div className="relative">
               <motion.div
                 animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 4 }}
-                className="absolute -top-8 -right-8"
+                className="absolute -top-6 -right-6 md:-top-8 md:-right-8"
               >
-                <Sparkles className="text-yellow-400/60 w-12 h-12" />
+                <Sparkles className="text-yellow-400/60 w-10 h-10 md:w-12 md:h-12" />
               </motion.div>
               <motion.img 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
                 src="/Landing Image.png" 
                 alt="Valentine" 
-                className="w-64 h-64 object-contain drop-shadow-xl"
+                className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-xl"
                 onError={(e) => {
                   e.currentTarget.src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Heart%20with%20Arrow.png";
                 }}
               />
             </div>
             
-            <h1 className="text-4xl font-bold text-pink-400 text-center leading-tight italic tracking-tight">
+            <h1 className="text-3xl md:text-4xl font-bold text-pink-400 text-center leading-tight italic tracking-tight">
               Click to be my <br />
-              <span className="text-6xl text-pink-500 not-italic font-black">Valentine</span>
+              <span className="text-5xl md:text-6xl text-pink-500 not-italic font-black">Valentine</span>
             </h1>
             
             <motion.div
@@ -91,9 +91,9 @@ const ValentineCard = () => {
               transition={{ repeat: Infinity, duration: 2 }}
               className="flex items-center text-pink-200 gap-3"
             >
-              <Heart fill="currentColor" size={16} />
-              <span className="font-bold text-sm tracking-widest uppercase italic">Tap to open</span>
-              <Heart fill="currentColor" size={16} />
+              <Heart fill="currentColor" size={14} />
+              <span className="font-bold text-xs md:text-sm tracking-widest uppercase italic">Tap to open</span>
+              <Heart fill="currentColor" size={14} />
             </motion.div>
           </motion.div>
         ) : (
@@ -102,7 +102,7 @@ const ValentineCard = () => {
             initial={{ scale: 0.95, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="bg-white border-4 border-pink-50 rounded-[60px] p-10 shadow-xl min-h-[800px] flex flex-col relative z-0"
+            className="bg-white border-4 border-pink-50 rounded-[40px] md:rounded-[60px] p-6 md:p-10 shadow-xl min-h-[700px] md:min-h-[800px] flex flex-col relative z-0"
           >
             <div className="flex-1 flex flex-col items-center justify-center w-full">
               <AnimatePresence mode="wait">
@@ -124,13 +124,13 @@ const ValentineCard = () => {
               </AnimatePresence>
             </div>
 
-            <div className="mt-10 flex justify-between items-center">
-              <div className="flex gap-2">
+            <div className="mt-8 md:mt-10 flex justify-between items-center">
+              <div className="flex gap-1.5 md:gap-2">
                 {Array.from({ length: totalPages }).map((_, i) => (
                   <motion.div
                     key={i}
                     animate={{ 
-                      width: (i + 1) === page ? 24 : 6,
+                      width: (i + 1) === page ? 20 : 6,
                       backgroundColor: (i + 1) === page ? "#f472b6" : "#fdf2f8"
                     }}
                     className="h-1.5 rounded-full"
@@ -138,15 +138,15 @@ const ValentineCard = () => {
                 ))}
               </div>
               
-              <div className="flex gap-3">
+              <div className="flex gap-2 md:gap-3">
                 {page > 1 && (
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={prevPage}
-                    className="bg-pink-50 hover:bg-pink-100 text-pink-400 px-6 py-2.5 rounded-full font-bold text-base flex items-center gap-2 transition-colors italic"
+                    className="bg-pink-50 hover:bg-pink-100 text-pink-400 px-4 md:px-6 py-2 md:py-2.5 rounded-full font-bold text-sm md:text-base flex items-center gap-1.5 md:gap-2 transition-colors italic"
                   >
-                    <ArrowLeft size={20} />
+                    <ArrowLeft size={18} />
                     Back
                   </motion.button>
                 )}
@@ -155,10 +155,10 @@ const ValentineCard = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={nextPage}
-                    className="bg-pink-400 hover:bg-pink-500 text-white px-6 py-2.5 rounded-full font-bold text-base flex items-center gap-2 transition-colors shadow-md shadow-pink-100 italic"
+                    className="bg-pink-400 hover:bg-pink-500 text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full font-bold text-sm md:text-base flex items-center gap-1.5 md:gap-2 transition-colors shadow-md shadow-pink-100 italic"
                   >
                     Next
-                    <ArrowRight size={20} />
+                    <ArrowRight size={18} />
                   </motion.button>
                 )}
               </div>
