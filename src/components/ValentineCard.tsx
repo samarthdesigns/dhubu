@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, ArrowRight, Sparkles } from 'lucide-react';
+import { Heart, ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
 import InstagramScene from './InstagramScene';
 import GolfScene from './GolfScene';
+import PlushieScene from './PlushieScene';
 import FacebookScene from './FacebookScene';
 import LoveScene from './LoveScene';
 import FinalScene from './FinalScene';
@@ -12,9 +13,11 @@ import FinalScene from './FinalScene';
 const ValentineCard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [page, setPage] = useState(1);
+  const totalPages = 6;
 
   const handleOpen = () => setIsOpen(true);
-  const nextPage = () => setPage((prev) => Math.min(prev + 1, 5));
+  const nextPage = () => setPage((prev) => Math.min(prev + 1, totalPages));
+  const prevPage = () => setPage((prev) => Math.max(prev - 1, 1));
 
   return (
     <div className="relative w-full max-w-2xl mx-auto">
@@ -80,57 +83,32 @@ const ValentineCard = () => {
             <div className="flex-1 flex flex-col items-center justify-center w-full">
               <AnimatePresence mode="wait">
                 {page === 1 && (
-                  <motion.div 
-                    key="p1" 
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    exit={{ opacity: 0, y: -10 }}
-                    className="w-full"
-                  >
+                  <motion.div key="p1" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="w-full">
                     <InstagramScene />
                   </motion.div>
                 )}
                 {page === 2 && (
-                  <motion.div 
-                    key="p2" 
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    exit={{ opacity: 0, y: -10 }}
-                    className="w-full"
-                  >
+                  <motion.div key="p2" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="w-full">
                     <GolfScene />
                   </motion.div>
                 )}
                 {page === 3 && (
-                  <motion.div 
-                    key="p3" 
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    exit={{ opacity: 0, y: -10 }}
-                    className="w-full"
-                  >
-                    <FacebookScene />
+                  <motion.div key="p3" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="w-full">
+                    <PlushieScene />
                   </motion.div>
                 )}
                 {page === 4 && (
-                  <motion.div 
-                    key="p4" 
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    exit={{ opacity: 0, y: -10 }}
-                    className="w-full"
-                  >
-                    <LoveScene />
+                  <motion.div key="p4" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="w-full">
+                    <FacebookScene />
                   </motion.div>
                 )}
                 {page === 5 && (
-                  <motion.div 
-                    key="p5" 
-                    initial={{ opacity: 0, y: 10 }} 
-                    animate={{ opacity: 1, y: 0 }} 
-                    exit={{ opacity: 0, y: -10 }}
-                    className="w-full"
-                  >
+                  <motion.div key="p5" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="w-full">
+                    <LoveScene />
+                  </motion.div>
+                )}
+                {page === 6 && (
+                  <motion.div key="p6" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="w-full">
                     <FinalScene />
                   </motion.div>
                 )}
@@ -139,25 +117,36 @@ const ValentineCard = () => {
 
             <div className="mt-10 flex justify-between items-center">
               <div className="flex gap-2">
-                {[1, 2, 3, 4, 5].map((p) => (
+                {Array.from({ length: totalPages }).map((_, i) => (
                   <div
-                    key={p}
+                    key={i}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
-                      p === page ? 'bg-pink-400 w-6' : 'bg-pink-50 w-1.5'
+                      (i + 1) === page ? 'bg-pink-400 w-6' : 'bg-pink-50 w-1.5'
                     }`}
                   />
                 ))}
               </div>
               
-              {page < 5 && (
-                <button
-                  onClick={nextPage}
-                  className="bg-pink-400 hover:bg-pink-500 text-white px-6 py-2.5 rounded-full font-bold text-base flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95 shadow-md shadow-pink-100 italic"
-                >
-                  Next
-                  <ArrowRight size={20} />
-                </button>
-              )}
+              <div className="flex gap-3">
+                {page > 1 && (
+                  <button
+                    onClick={prevPage}
+                    className="bg-pink-50 hover:bg-pink-100 text-pink-400 px-6 py-2.5 rounded-full font-bold text-base flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95 italic"
+                  >
+                    <ArrowLeft size={20} />
+                    Back
+                  </button>
+                )}
+                {page < totalPages && (
+                  <button
+                    onClick={nextPage}
+                    className="bg-pink-400 hover:bg-pink-500 text-white px-6 py-2.5 rounded-full font-bold text-base flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95 shadow-md shadow-pink-100 italic"
+                  >
+                    Next
+                    <ArrowRight size={20} />
+                  </button>
+                )}
+              </div>
             </div>
           </motion.div>
         )}
