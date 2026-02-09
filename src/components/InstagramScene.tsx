@@ -13,8 +13,6 @@ const InstagramScene = () => {
 
   return (
     <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
       className="w-full max-w-lg mx-auto bg-white border border-gray-100 rounded-[40px] overflow-hidden shadow-xl flex flex-col h-[550px]"
     >
       {/* Chat Header */}
@@ -48,9 +46,14 @@ const InstagramScene = () => {
         {messages.map((msg, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2 }}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 260, 
+              damping: 20,
+              delay: 0.1 + i * 0.15 
+            }}
             className={`flex ${msg.side === 'right' ? 'justify-end' : 'justify-start'}`}
           >
             <div className={`max-w-[80%] p-4 rounded-[24px] text-sm font-medium tracking-tight ${
@@ -64,11 +67,16 @@ const InstagramScene = () => {
         ))}
       </div>
 
-      <div className="p-6 text-center border-t border-gray-50 bg-white">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        className="p-6 text-center border-t border-gray-50 bg-white"
+      >
         <p className="text-lg text-gray-700 font-medium italic tracking-tight leading-relaxed">
           "July 2025, we started talking and it just clicked."
         </p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

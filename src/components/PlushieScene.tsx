@@ -13,26 +13,45 @@ const PlushieScene = () => {
     { img: noriImg, name: "Nori Bebu" }
   ];
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.8, y: 20 },
+    show: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0,
+      transition: { type: "spring", stiffness: 260, damping: 20 }
+    }
+  };
+
   return (
     <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      variants={container}
+      initial="hidden"
+      animate="show"
       className="w-full h-[550px] bg-white rounded-[40px] p-6 flex flex-col items-center justify-center space-y-6"
     >
-      <div className="text-center space-y-2">
+      <motion.div variants={item} className="text-center space-y-2">
         <h3 className="text-2xl font-bold text-pink-500 italic tracking-tight">Our Little Family</h3>
         <p className="text-gray-600 text-sm font-medium italic max-w-md mx-auto leading-relaxed">
           "We have adopted a lot of babies along the way and gifted each other cute plushies."
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-3 gap-4 w-full">
         {babies.map((baby, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.2 }}
+            variants={item}
             className="flex flex-col items-center space-y-3"
           >
             <div className="relative group">
