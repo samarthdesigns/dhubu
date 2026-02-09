@@ -29,7 +29,7 @@ const FinalScene = () => {
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-5xl font-black text-pink-600 font-serif italic leading-tight">
+        <h2 className="text-6xl font-black text-pink-600 font-serif italic leading-tight">
           To a life-time of memories
         </h2>
         <motion.div
@@ -41,7 +41,7 @@ const FinalScene = () => {
         </motion.div>
       </div>
 
-      <p className="text-pink-400 font-black tracking-[0.3em] uppercase text-lg">
+      <p className="text-pink-400 font-black tracking-[0.3em] uppercase text-2xl font-serif italic">
         Happy Valentine's Day, Dhruvi!
       </p>
     </motion.div>

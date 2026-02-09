@@ -57,9 +57,9 @@ const ValentineCard = () => {
               transition={{ repeat: Infinity, duration: 1.5 }}
               className="flex items-center text-pink-300 gap-4"
             >
-              <Heart fill="currentColor" size={32} className="animate-pulse" />
-              <span className="font-black text-2xl tracking-widest uppercase">Tap to open</span>
-              <Heart fill="currentColor" size={32} className="animate-pulse" />
+              <Heart fill="currentColor" size={24} className="animate-pulse" />
+              <span className="font-black text-2xl tracking-widest uppercase font-serif italic">Tap to open</span>
+              <Heart fill="currentColor" size={24} className="animate-pulse" />
             </motion.div>
           </motion.div>
         ) : (
@@ -95,7 +95,7 @@ const ValentineCard = () => {
               {page < 5 && (
                 <button
                   onClick={nextPage}
-                  className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full font-black text-2xl flex items-center gap-4 transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-pink-200"
+                  className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full font-black text-2xl flex items-center gap-4 transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-pink-200 font-serif italic"
                 >
                   Next Page
                   <ArrowRight size={32} />

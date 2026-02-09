@@ -19,7 +19,7 @@ const GolfScene = () => {
         <motion.h2 
           animate={{ textShadow: ["0 0-15px #a855f7", "0 0 30px #a855f7", "0 0 15px #a855f7"] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="text-6xl font-black text-purple-400 tracking-tighter uppercase italic"
+          className="text-6xl font-black text-purple-400 tracking-tighter uppercase italic font-serif"
         >
           Monster Golf
         </motion.h2>
@@ -29,7 +29,7 @@ const GolfScene = () => {
       <div className="relative z-10 flex items-center gap-12 mb-12">
         <motion.div animate={{ y: [0, -15, 0] }} transition={{ repeat: Infinity, duration: 3 }}>
           <img 
-            src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Coffee%20Bean.png" 
+            src="/Samarth.png" 
             alt="Samarth" 
             className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" 
           />
@@ -48,7 +48,7 @@ const GolfScene = () => {
 
         <motion.div animate={{ y: [0, -15, 0] }} transition={{ repeat: Infinity, duration: 3, delay: 0.5 }}>
           <img 
-            src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Avocado.png" 
+            src="/Dhruvi.png" 
             alt="Dhruvi" 
             className="w-32 h-32 object-contain drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]" 
           />
@@ -56,7 +56,7 @@ const GolfScene = () => {
       </div>
 
       <div className="z-10 bg-white/10 backdrop-blur-xl border-2 border-white/20 p-8 rounded-[30px] text-center max-w-lg">
-        <p className="text-purple-100 text-xl leading-relaxed font-black">
+        <p className="text-purple-100 text-2xl leading-relaxed font-black font-serif italic">
           "The plushie cornicles started on 16th August 2025, when I won you your first monster golf themed plushie."
         </p>
       </div>

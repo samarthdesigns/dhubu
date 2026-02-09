@@ -23,15 +23,15 @@ const InstagramScene = () => {
           <div className="relative">
             <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[3px]">
               <img 
-                src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Avocado.png" 
+                src="/Dhruvi.png" 
                 alt="Dhruvi" 
-                className="w-full h-full rounded-full object-contain bg-white p-1" 
+                className="w-full h-full rounded-full object-cover bg-white" 
               />
             </div>
             <div className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full" />
           </div>
           <div>
-            <p className="font-black text-lg">Dhruvi</p>
+            <p className="font-black text-lg font-serif italic">Dhruvi</p>
             <p className="text-xs text-gray-500">Active now</p>
           </div>
         </div>
@@ -52,7 +52,7 @@ const InstagramScene = () => {
             transition={{ delay: i * 0.3 }}
             className={`flex ${msg.side === 'right' ? 'justify-end' : 'justify-start'}`}
           >
-            <div className={`max-w-[85%] p-5 rounded-[30px] text-lg font-bold ${
+            <div className={`max-w-[85%] p-5 rounded-[30px] text-lg font-bold font-serif italic ${
               msg.side === 'right' 
                 ? 'bg-blue-500 text-white rounded-tr-none' 
                 : 'bg-white border border-gray-100 text-gray-800 rounded-tl-none shadow-md'
@@ -64,7 +64,7 @@ const InstagramScene = () => {
       </div>
 
       <div className="p-8 text-center border-t border-gray-100 bg-white">
-        <p className="text-xl text-gray-800 font-black italic leading-tight">
+        <p className="text-2xl text-gray-800 font-black italic leading-tight font-serif">
           "July 2025, we started talking and it just clicked."
         </p>
       </div>

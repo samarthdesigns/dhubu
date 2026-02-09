@@ -21,13 +21,13 @@ const FacebookScene = () => {
         <div className="flex items-center gap-4 mb-8">
           <div className="w-14 h-14 rounded-full bg-gray-100 overflow-hidden border-2 border-gray-100 flex items-center justify-center">
             <img 
-              src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Food%20Drink/Coffee%20Bean.png" 
+              src="/Samarth.png" 
               alt="Samarth" 
-              className="w-10 h-10 object-contain" 
+              className="w-full h-full object-cover" 
             />
           </div>
           <div>
-            <p className="font-black text-lg">Samarth</p>
+            <p className="font-black text-lg font-serif italic">Samarth</p>
             <p className="text-sm text-gray-500">September 16, 2025 • 🌎</p>
           </div>
         </div>
@@ -47,10 +47,10 @@ const FacebookScene = () => {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-3xl font-black text-gray-900 leading-tight">
+            <h3 className="text-4xl font-black text-gray-900 leading-tight font-serif italic">
               Samarth and Dhruvi are now in a relationship
             </h3>
-            <p className="text-gray-800 text-xl font-black italic px-4">
+            <p className="text-gray-800 text-2xl font-black italic px-4 font-serif">
               "On 16th September 2025 we officially started dating."
             </p>
           </div>
