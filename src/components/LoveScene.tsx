@@ -27,7 +27,7 @@ const LoveScene = () => {
         <div className="flex items-center justify-center gap-8">
           <motion.div animate={{ x: [-5, 5, -5] }} transition={{ repeat: Infinity, duration: 5 }} className="relative">
             <img 
-              src="/Samarth.png" 
+              src="/utils/Samarth.png" 
               alt="Samarth" 
               className="w-28 h-28 object-contain drop-shadow-md"
               onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&top=shortHair&hairColor=black"}
