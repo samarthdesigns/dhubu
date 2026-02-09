@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Heart, ArrowRight, Sparkles } from 'lucide-react';
 import Bunny from './Bunny';
+import InstagramScene from './InstagramScene';
+import GolfScene from './GolfScene';
 
 const ValentineCard = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,46 +59,45 @@ const ValentineCard = () => {
             initial={{ rotateY: 180, opacity: 0 }}
             animate={{ rotateY: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="bg-white border-4 border-pink-100 rounded-3xl p-8 shadow-2xl min-h-[500px] flex flex-col"
+            className="bg-white border-4 border-pink-100 rounded-3xl p-8 shadow-2xl min-h-[550px] flex flex-col"
           >
-            <div className="flex-1 flex flex-col items-center justify-center">
-              {page === 1 && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex flex-col items-center space-y-12 w-full"
-                >
-                  <div className="flex justify-between w-full px-4">
-                    <Bunny location="Austin" isTexting />
-                    <div className="flex items-center">
-                      <motion.div
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ repeat: Infinity, duration: 1 }}
-                      >
-                        <MessageCircle className="text-pink-200 w-8 h-8" />
-                      </motion.div>
-                    </div>
-                    <Bunny location="Seattle" isTexting />
-                  </div>
-                  
-                  <div className="text-center space-y-4">
-                    <p className="text-2xl font-medium text-gray-700 leading-relaxed">
-                      "July 2025, we started talking and it just clicked."
-                    </p>
-                    <div className="flex justify-center gap-2">
-                      {[1, 2, 3].map((i) => (
-                        <Heart key={i} className="text-pink-200 fill-pink-200 w-4 h-4" />
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              )}
+            <div className="flex-1 flex flex-col items-center justify-center w-full">
+              <AnimatePresence mode="wait">
+                {page === 1 && (
+                  <motion.div
+                    key="page1"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="w-full"
+                  >
+                    <InstagramScene />
+                  </motion.div>
+                )}
 
-              {page > 1 && (
-                <div className="text-center text-gray-400 italic">
-                  Coming soon... (Page {page})
-                </div>
-              )}
+                {page === 2 && (
+                  <motion.div
+                    key="page2"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    className="w-full h-full"
+                  >
+                    <GolfScene />
+                  </motion.div>
+                )}
+
+                {page > 2 && (
+                  <motion.div
+                    key="placeholder"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-center text-gray-400 italic"
+                  >
+                    Coming soon... (Page {page})
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <div className="mt-8 flex justify-between items-center">
