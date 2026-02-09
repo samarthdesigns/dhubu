@@ -27,7 +27,7 @@ const GolfScene = () => {
       <div className="relative z-10 flex items-center gap-10 mb-10">
         <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4 }}>
           <img 
-            src="/Samarth.png" 
+            src="/utils/Samarth.png" 
             alt="Samarth" 
             className="w-28 h-28 object-contain drop-shadow-lg"
             onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&top=shortHair&hairColor=black"}
