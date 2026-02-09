@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ThumbsUp, MessageSquare, Share2, Heart } from 'lucide-react';
+import samarthImg from '@/utils/Samarth.png';
 
 const FacebookScene = () => {
   return (
@@ -20,10 +21,9 @@ const FacebookScene = () => {
         <div className="flex items-center gap-3 mb-6">
           <div className="w-12 h-12 rounded-full bg-gray-50 overflow-hidden border border-gray-100 flex items-center justify-center">
             <img 
-              src="/utils/Samarth.png" 
+              src={samarthImg} 
               alt="Samarth" 
               className="w-full h-full object-cover"
-              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&top=shortHair&hairColor=black"}
             />
           </div>
           <div>

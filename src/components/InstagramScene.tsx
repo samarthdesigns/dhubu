@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Video, Phone, Info } from 'lucide-react';
+import dhruviImg from '@/utils/Dhruvi.png';
 
 const InstagramScene = () => {
   const messages = [
@@ -23,10 +24,9 @@ const InstagramScene = () => {
           <div className="relative">
             <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-[2px]">
               <img 
-                src="/Dhruvi.png" 
+                src={dhruviImg} 
                 alt="Dhruvi" 
                 className="w-full h-full rounded-full object-cover bg-white"
-                onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka&top=curly&hairColor=black"}
               />
             </div>
             <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full" />

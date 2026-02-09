@@ -3,6 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Ghost, Sparkles, Trophy } from 'lucide-react';
+import samarthImg from '@/utils/Samarth.png';
+import dhruviImg from '@/utils/Dhruvi.png';
 
 const GolfScene = () => {
   return (
@@ -27,10 +29,9 @@ const GolfScene = () => {
       <div className="relative z-10 flex items-center gap-10 mb-10">
         <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4 }}>
           <img 
-            src="/utils/Samarth.png" 
+            src={samarthImg} 
             alt="Samarth" 
             className="w-28 h-28 object-contain drop-shadow-lg"
-            onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&top=shortHair&hairColor=black"}
           />
         </motion.div>
 
@@ -47,10 +48,9 @@ const GolfScene = () => {
 
         <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}>
           <img 
-            src="/Dhruvi.png" 
+            src={dhruviImg} 
             alt="Dhruvi" 
             className="w-28 h-28 object-contain drop-shadow-lg"
-            onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka&top=curly&hairColor=black"}
           />
         </motion.div>
       </div>

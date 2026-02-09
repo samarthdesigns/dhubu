@@ -3,6 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Calendar } from 'lucide-react';
+import samarthImg from '@/utils/Samarth.png';
+import dhruviImg from '@/utils/Dhruvi.png';
 
 const LoveScene = () => {
   return (
@@ -27,10 +29,9 @@ const LoveScene = () => {
         <div className="flex items-center justify-center gap-8">
           <motion.div animate={{ x: [-5, 5, -5] }} transition={{ repeat: Infinity, duration: 5 }} className="relative">
             <img 
-              src="/utils/Samarth.png" 
+              src={samarthImg} 
               alt="Samarth" 
               className="w-28 h-28 object-contain drop-shadow-md"
-              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&top=shortHair&hairColor=black"}
             />
             <div className="absolute -top-2 -right-2 bg-white px-2 py-1 rounded-lg shadow-sm text-[10px] font-bold text-rose-400 border border-rose-50">
               Jan 31
@@ -43,10 +44,9 @@ const LoveScene = () => {
 
           <motion.div animate={{ x: [5, -5, 5] }} transition={{ repeat: Infinity, duration: 5 }} className="relative">
             <img 
-              src="/Dhruvi.png" 
+              src={dhruviImg} 
               alt="Dhruvi" 
               className="w-28 h-28 object-contain drop-shadow-md"
-              onError={(e) => e.currentTarget.src = "https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka&top=curly&hairColor=black"}
             />
             <div className="absolute -top-2 -left-2 bg-white px-2 py-1 rounded-lg shadow-sm text-[10px] font-bold text-rose-400 border border-rose-50">
               Feb 2
