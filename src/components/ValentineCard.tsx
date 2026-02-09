@@ -17,7 +17,7 @@ const ValentineCard = () => {
   const nextPage = () => setPage((prev) => Math.min(prev + 1, 5));
 
   return (
-    <div className="relative w-full max-w-xl mx-auto perspective-1000">
+    <div className="relative w-full max-w-2xl mx-auto perspective-1000">
       <AnimatePresence mode="wait">
         {!isOpen ? (
           <motion.div
@@ -27,39 +27,39 @@ const ValentineCard = () => {
             exit={{ rotateY: -180, opacity: 0 }}
             transition={{ duration: 0.6, type: "spring" }}
             onClick={handleOpen}
-            className="cursor-pointer bg-[#FFF9F9] border-4 border-pink-200 rounded-[40px] p-12 shadow-2xl flex flex-col items-center justify-center space-y-8 hover:shadow-pink-100 transition-shadow min-h-[600px]"
+            className="cursor-pointer bg-[#FFF9F9] border-8 border-pink-200 rounded-[60px] p-16 shadow-2xl flex flex-col items-center justify-center space-y-12 hover:shadow-pink-200 transition-shadow min-h-[700px]"
           >
             <div className="relative">
               <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
+                animate={{ scale: [1, 1.2, 1] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="absolute -top-6 -right-6"
+                className="absolute -top-10 -right-10"
               >
-                <Sparkles className="text-yellow-400 w-12 h-12" />
+                <Sparkles className="text-yellow-400 w-16 h-16" />
               </motion.div>
               <img 
-                src="/Landing Image.webp" 
+                src="/Landing Image.png" 
                 alt="Valentine" 
-                className="w-64 h-64 object-contain drop-shadow-xl"
+                className="w-80 h-80 object-contain drop-shadow-2xl"
                 onError={(e) => {
                   e.currentTarget.src = "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Heart%20with%20Arrow.png";
                 }}
               />
             </div>
             
-            <h1 className="text-5xl font-bold text-pink-500 text-center leading-tight font-serif italic">
+            <h1 className="text-6xl font-black text-pink-500 text-center leading-tight font-serif italic">
               Click to be my <br />
-              <span className="text-7xl text-pink-600 not-italic">Valentine</span>
+              <span className="text-8xl text-pink-600 not-italic">Valentine</span>
             </h1>
             
             <motion.div
-              animate={{ y: [0, 5, 0] }}
+              animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
-              className="flex items-center text-pink-300 gap-3"
+              className="flex items-center text-pink-300 gap-4"
             >
-              <Heart fill="currentColor" size={24} />
-              <span className="font-bold text-lg tracking-widest uppercase">Tap to open</span>
-              <Heart fill="currentColor" size={24} />
+              <Heart fill="currentColor" size={32} className="animate-pulse" />
+              <span className="font-black text-2xl tracking-widest uppercase">Tap to open</span>
+              <Heart fill="currentColor" size={32} className="animate-pulse" />
             </motion.div>
           </motion.div>
         ) : (
@@ -68,7 +68,7 @@ const ValentineCard = () => {
             initial={{ rotateY: 180, opacity: 0 }}
             animate={{ rotateY: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="bg-white border-4 border-pink-100 rounded-[40px] p-10 shadow-2xl min-h-[700px] flex flex-col"
+            className="bg-white border-8 border-pink-100 rounded-[60px] p-12 shadow-2xl min-h-[800px] flex flex-col"
           >
             <div className="flex-1 flex flex-col items-center justify-center w-full">
               <AnimatePresence mode="wait">
@@ -80,13 +80,13 @@ const ValentineCard = () => {
               </AnimatePresence>
             </div>
 
-            <div className="mt-10 flex justify-between items-center">
-              <div className="flex gap-2">
+            <div className="mt-12 flex justify-between items-center">
+              <div className="flex gap-3">
                 {[1, 2, 3, 4, 5].map((p) => (
                   <div
                     key={p}
-                    className={`h-3 rounded-full transition-all duration-300 ${
-                      p === page ? 'bg-pink-500 w-8' : 'bg-pink-100 w-3'
+                    className={`h-4 rounded-full transition-all duration-300 ${
+                      p === page ? 'bg-pink-500 w-12' : 'bg-pink-100 w-4'
                     }`}
                   />
                 ))}
@@ -95,10 +95,10 @@ const ValentineCard = () => {
               {page < 5 && (
                 <button
                   onClick={nextPage}
-                  className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full font-black text-lg flex items-center gap-3 transition-all transform hover:scale-105 active:scale-95 shadow-xl shadow-pink-200"
+                  className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full font-black text-2xl flex items-center gap-4 transition-all transform hover:scale-105 active:scale-95 shadow-2xl shadow-pink-200"
                 >
                   Next Page
-                  <ArrowRight size={24} />
+                  <ArrowRight size={32} />
                 </button>
               )}
             </div>
