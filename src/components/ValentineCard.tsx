@@ -17,17 +17,24 @@ const ValentineCard = () => {
   const nextPage = () => setPage((prev) => Math.min(prev + 1, 5));
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto perspective-1000">
+    <div className="relative w-full max-w-2xl mx-auto">
+      {/* Decorative Stack Layers */}
+      <div className="absolute inset-0 bg-white border-2 border-pink-50 rounded-[60px] shadow-sm transform rotate-2 translate-y-2 -z-10" />
+      <div className="absolute inset-0 bg-white border-2 border-pink-50 rounded-[60px] shadow-sm transform -rotate-1 translate-y-1 -z-10" />
+
       <AnimatePresence mode="wait">
         {!isOpen ? (
           <motion.div
             key="closed"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ rotateY: -180, opacity: 0 }}
-            transition={{ duration: 0.6, type: "spring" }}
+            initial={{ y: 0, opacity: 1 }}
+            exit={{ 
+              x: -500, 
+              rotate: -15, 
+              opacity: 0,
+              transition: { duration: 0.6, ease: "anticipate" } 
+            }}
             onClick={handleOpen}
-            className="cursor-pointer bg-white border-4 border-pink-50 rounded-[60px] p-12 shadow-xl flex flex-col items-center justify-center space-y-10 hover:shadow-pink-100/50 transition-shadow min-h-[700px]"
+            className="cursor-pointer bg-white border-4 border-pink-50 rounded-[60px] p-12 shadow-xl flex flex-col items-center justify-center space-y-10 hover:shadow-pink-100/50 transition-shadow min-h-[700px] relative z-10"
           >
             <div className="relative">
               <motion.div
@@ -47,9 +54,9 @@ const ValentineCard = () => {
               />
             </div>
             
-            <h1 className="text-5xl font-bold text-pink-400 text-center leading-tight italic tracking-tight">
+            <h1 className="text-4xl font-bold text-pink-400 text-center leading-tight italic tracking-tight">
               Click to be my <br />
-              <span className="text-7xl text-pink-500 not-italic font-black">Valentine</span>
+              <span className="text-6xl text-pink-500 not-italic font-black">Valentine</span>
             </h1>
             
             <motion.div
@@ -57,26 +64,76 @@ const ValentineCard = () => {
               transition={{ repeat: Infinity, duration: 2 }}
               className="flex items-center text-pink-200 gap-3"
             >
-              <Heart fill="currentColor" size={18} className="animate-pulse" />
-              <span className="font-bold text-lg tracking-widest uppercase italic">Tap to open</span>
-              <Heart fill="currentColor" size={18} className="animate-pulse" />
+              <Heart fill="currentColor" size={16} className="animate-pulse" />
+              <span className="font-bold text-sm tracking-widest uppercase italic">Tap to open</span>
+              <Heart fill="currentColor" size={16} className="animate-pulse" />
             </motion.div>
           </motion.div>
         ) : (
           <motion.div
             key="opened"
-            initial={{ rotateY: 180, opacity: 0 }}
-            animate={{ rotateY: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="bg-white border-4 border-pink-50 rounded-[60px] p-10 shadow-xl min-h-[800px] flex flex-col"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white border-4 border-pink-50 rounded-[60px] p-10 shadow-xl min-h-[800px] flex flex-col relative z-0"
           >
             <div className="flex-1 flex flex-col items-center justify-center w-full">
               <AnimatePresence mode="wait">
-                {page === 1 && <InstagramScene key="p1" />}
-                {page === 2 && <GolfScene key="p2" />}
-                {page === 3 && <FacebookScene key="p3" />}
-                {page === 4 && <LoveScene key="p4" />}
-                {page === 5 && <FinalScene key="p5" />}
+                {page === 1 && (
+                  <motion.div 
+                    key="p1" 
+                    initial={{ opacity: 0, y: 10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }}
+                    className="w-full"
+                  >
+                    <InstagramScene />
+                  </motion.div>
+                )}
+                {page === 2 && (
+                  <motion.div 
+                    key="p2" 
+                    initial={{ opacity: 0, y: 10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }}
+                    className="w-full"
+                  >
+                    <GolfScene />
+                  </motion.div>
+                )}
+                {page === 3 && (
+                  <motion.div 
+                    key="p3" 
+                    initial={{ opacity: 0, y: 10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }}
+                    className="w-full"
+                  >
+                    <FacebookScene />
+                  </motion.div>
+                )}
+                {page === 4 && (
+                  <motion.div 
+                    key="p4" 
+                    initial={{ opacity: 0, y: 10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }}
+                    className="w-full"
+                  >
+                    <LoveScene />
+                  </motion.div>
+                )}
+                {page === 5 && (
+                  <motion.div 
+                    key="p5" 
+                    initial={{ opacity: 0, y: 10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }}
+                    className="w-full"
+                  >
+                    <FinalScene />
+                  </motion.div>
+                )}
               </AnimatePresence>
             </div>
 
@@ -85,8 +142,8 @@ const ValentineCard = () => {
                 {[1, 2, 3, 4, 5].map((p) => (
                   <div
                     key={p}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      p === page ? 'bg-pink-400 w-8' : 'bg-pink-50 w-2'
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      p === page ? 'bg-pink-400 w-6' : 'bg-pink-50 w-1.5'
                     }`}
                   />
                 ))}
@@ -95,10 +152,10 @@ const ValentineCard = () => {
               {page < 5 && (
                 <button
                   onClick={nextPage}
-                  className="bg-pink-400 hover:bg-pink-500 text-white px-8 py-3 rounded-full font-bold text-lg flex items-center gap-3 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-pink-100 italic"
+                  className="bg-pink-400 hover:bg-pink-500 text-white px-6 py-2.5 rounded-full font-bold text-base flex items-center gap-2 transition-all transform hover:scale-105 active:scale-95 shadow-md shadow-pink-100 italic"
                 >
-                  Next Page
-                  <ArrowRight size={24} />
+                  Next
+                  <ArrowRight size={20} />
                 </button>
               )}
             </div>
