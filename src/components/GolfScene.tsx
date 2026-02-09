@@ -27,21 +27,21 @@ const GolfScene = () => {
         <motion.div
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute -top-6 -left-8 text-cyan-400"
+          className="absolute -top-8 -left-10 text-cyan-400"
         >
-          <Zap size={24} className="fill-cyan-400" />
+          <Zap size={28} className="fill-cyan-400" />
         </motion.div>
         
         <motion.h2 
           animate={{ 
             textShadow: [
-              "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #a855f7, 0 0 82px #a855f7",
-              "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #3b82f6, 0 0 82px #3b82f6",
-              "0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #a855f7, 0 0 82px #a855f7"
+              "0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #a855f7",
+              "0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #3b82f6",
+              "0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #a855f7"
             ]
           }}
           transition={{ repeat: Infinity, duration: 4 }}
-          className="text-5xl font-black text-white tracking-tighter uppercase italic"
+          className="text-6xl font-black text-white tracking-tighter uppercase italic relative z-20"
         >
           Monster Golf
         </motion.h2>
@@ -49,7 +49,7 @@ const GolfScene = () => {
         <motion.div 
           animate={{ width: ['0%', '100%', '0%'] }}
           transition={{ repeat: Infinity, duration: 3 }}
-          className="h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto mt-2 shadow-[0_0_10px_#22d3ee]" 
+          className="h-1.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto mt-2 shadow-[0_0_15px_#22d3ee]" 
         />
       </div>
 
@@ -57,15 +57,17 @@ const GolfScene = () => {
         <motion.div 
           animate={{ 
             y: [0, -15, 0],
-            filter: ["drop-shadow(0 0 0px rgba(168,85,247,0))", "drop-shadow(0 0 15px rgba(168,85,247,0.6))", "drop-shadow(0 0 0px rgba(168,85,247,0))"]
           }} 
           transition={{ repeat: Infinity, duration: 4 }}
+          className="relative"
         >
-          <img 
-            src={samarthImg} 
-            alt="Samarth" 
-            className="w-32 h-32 object-contain"
-          />
+          <div className="w-32 h-32 rounded-full border-4 border-purple-500/50 overflow-hidden shadow-[0_0_20px_rgba(168,85,247,0.4)] bg-black/20">
+            <img 
+              src={samarthImg} 
+              alt="Samarth" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </motion.div>
 
         <div className="flex flex-col items-center">
@@ -75,58 +77,60 @@ const GolfScene = () => {
               rotate: [0, 10, -10, 0]
             }}
             transition={{ repeat: Infinity, duration: 2 }}
-            className="text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.8)]"
+            className="text-yellow-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.9)]"
           >
-            <Trophy size={56} />
+            <Trophy size={64} />
           </motion.div>
           <motion.div
             animate={{ opacity: [0.3, 1, 0.3] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
           >
-            <Ghost className="text-purple-400 mt-4 drop-shadow-[0_0_8px_rgba(192,132,252,0.8)]" size={36} />
+            <Ghost className="text-purple-400 mt-4 drop-shadow-[0_0_10px_rgba(192,132,252,0.8)]" size={40} />
           </motion.div>
         </div>
 
         <motion.div 
           animate={{ 
             y: [0, -15, 0],
-            filter: ["drop-shadow(0 0 0px rgba(34,211,238,0))", "drop-shadow(0 0 15px rgba(34,211,238,0.6))", "drop-shadow(0 0 0px rgba(34,211,238,0))"]
           }} 
           transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}
+          className="relative"
         >
-          <img 
-            src={dhruviImg} 
-            alt="Dhruvi" 
-            className="w-32 h-32 object-contain"
-          />
+          <div className="w-32 h-32 rounded-full border-4 border-cyan-500/50 overflow-hidden shadow-[0_0_20px_rgba(34,211,238,0.4)] bg-black/20">
+            <img 
+              src={dhruviImg} 
+              alt="Dhruvi" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </motion.div>
       </div>
 
       <motion.div 
         initial={{ scale: 0.9 }}
         animate={{ scale: 1 }}
-        className="z-10 bg-black/40 backdrop-blur-xl border-2 border-cyan-500/50 p-8 rounded-[32px] text-center max-w-md shadow-[0_0_20px_rgba(6,182,212,0.2)]"
+        className="z-10 bg-black/60 backdrop-blur-xl border-2 border-cyan-500/50 p-8 rounded-[32px] text-center max-w-md shadow-[0_0_25px_rgba(6,182,212,0.3)]"
       >
-        <p className="text-cyan-50 text-lg leading-relaxed font-bold italic tracking-tight">
+        <p className="text-cyan-50 text-xl leading-relaxed font-bold italic tracking-tight">
           "The plushie <span className="text-cyan-400 underline decoration-cyan-400/50 underline-offset-4">story</span> started on 16th August 2025, when I won you your first monster golf themed plushie."
         </p>
       </motion.div>
 
       {/* Floating Neon Particles */}
-      {[...Array(8)].map((_, i) => (
+      {[...Array(10)].map((_, i) => (
         <motion.div
           key={i}
           className={`absolute ${i % 2 === 0 ? 'text-cyan-400' : 'text-purple-400'}`}
           animate={{ 
-            y: [0, -150], 
-            x: [0, (i % 2 === 0 ? 20 : -20)],
+            y: [0, -200], 
+            x: [0, (i % 2 === 0 ? 30 : -30)],
             opacity: [0, 1, 0],
-            scale: [0.5, 1, 0.5]
+            scale: [0.5, 1.2, 0.5]
           }}
-          transition={{ repeat: Infinity, duration: 3 + Math.random() * 2, delay: i * 0.5 }}
-          style={{ left: `${10 + i * 12}%`, bottom: '5%' }}
+          transition={{ repeat: Infinity, duration: 3 + Math.random() * 2, delay: i * 0.4 }}
+          style={{ left: `${5 + i * 10}%`, bottom: '2%' }}
         >
-          <Sparkles size={20} className="drop-shadow-[0_0_5px_currentColor]" />
+          <Sparkles size={24} className="drop-shadow-[0_0_8px_currentColor]" />
         </motion.div>
       ))}
     </motion.div>
