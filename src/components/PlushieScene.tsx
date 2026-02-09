@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import pizzaImg from '@/utils/PizzaBebus.jpg';
-import buckyImg from '@/utils/BuckyBebu.jpg';
-import noriImg from '@/utils/NoriBebu.JPG';
+import pizzaImg from '../utils/PizzaBebus.jpg';
+import buckyImg from '../utils/BuckyBebu.jpg';
+import noriImg from '../utils/NoriBebu.JPG';
 
 const PlushieScene = () => {
   const babies = [
